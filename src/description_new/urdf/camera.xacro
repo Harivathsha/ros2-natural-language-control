@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="hv_bot">
+  <link name="camera">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.01 0.03 0.015"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.01 0.03 0.015"/>
+      </geometry>
+      <material name="yellow">
+        <color rgba="1.0 1.0 0.0 1.0"/>
+      </material>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01"/>
+      <inertia ixx="0.00008175" ixy="0" ixz="0" iyy="0.00001083" iyz="0" izz="0.00007908" />
+    </inertial>
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.12 0 0.06" rpy="0 0 0" />
+    <parent link="base_link"/>
+    <child link="camera"/>
+  </joint>
+
+  <link name="camera_optical"/>
+
+  <joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="camera"/>
+    <child link="camera_optical"/>
+  </joint>
+
+  <gazebo reference="camera">
+    <material>Gazebo/Black</material> 
+    
+    <sensor name="rgbd_camera" type="rgbd_camera">
+      <update_rate>10.0</update_rate>
+      <always_on>true</always_on>
+      
+      <topic>camera</topic> 
+      <gz_frame_id>camera_optical</gz_frame_id>
+      
+      <camera>
+        <camera_info_topic>/camera/camera_info</camera_info_topic>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>20.0</far>
+        </clip>
+        <optical_frame_id>camera_optical</optical_frame_id> 
+      </camera>
+    </sensor>
+  </gazebo>
+</robot>

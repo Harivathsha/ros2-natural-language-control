@@ -1,0 +1,15 @@
+{
+  "checkpoint": "/home/harivathsha/ai_envs/project/nlp_project/artifacts/semantic_phase2_typing",
+  "split": "test",
+  "rows": 1100,
+  "metrics": {
+    "valid_json": 0.9982,
+    "intent_correct": 0.9827,
+    "parameters_exact": 0.9009,
+    "decision_correct": 0.98,
+    "command_exact": 0.8982,
+    "numeric_exact": 0.9078,
+    "unsafe_accepts": 17,
+    "wrong_command_accepts": 75
+  }
+}

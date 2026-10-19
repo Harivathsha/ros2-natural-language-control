@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="hv_bot">
+
+  <link name="base_footprint"/>
+
+  <joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
+  
+<link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0.0249999818482818" rpy="0 0 0" />
+      <mass value="2.20669504552775" />
+      <inertia
+        ixx="0.00720851555103568" ixy="5.88950083162519E-19" ixz="2.75039385123007E-19"
+        iyy="0.00993602524548524" iyz="-3.85986754710237E-20" izz="0.0162253162137275" />
+    </inertial>
+    
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find description_new)/meshes/base_link.STL" scale="1 1 1"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find description_new)/meshes/base_link.STL" scale="1 1 1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_lw">
+    <inertial>
+      <origin xyz="0 -0.0075 -1.1102E-16" rpy="0 0 0" />
+      <mass value="0.04935" />
+      <inertia
+        ixx="1.4068E-05" ixy="-1.6538E-24" ixz="-3.5658E-38"
+        iyy="2.6285E-05" iyz="1.5953E-21" izz="1.4068E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find description_new)/meshes/link_lw.STL" scale="1 1 1"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.0325" length="0.025"/> 
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_lw" type="continuous">
+    <origin xyz="0 0.105 0.025" rpy="0 0 3.1416" /> <parent link="base_link" />
+    <child link="link_lw" />
+    <axis xyz="0 -1 0" />
+  </joint>
+
+  <link name="link_rw">
+    <inertial>
+      <origin xyz="-2.2204E-16 0.0075 -1.1102E-16" rpy="0 0 0" />
+      <mass value="0.04935" />
+      <inertia
+        ixx="1.4068E-05" ixy="1.6538E-24" ixz="1.0924E-41"
+        iyy="2.6285E-05" iyz="2.3647E-38" izz="1.4068E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find description_new)/meshes/link_rw.STL" scale="1 1 1"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0" />
+      <geometry>
+        <cylinder radius="0.0325" length="0.025"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_rw" type="continuous">
+    <origin xyz="0 -0.105 0.025" rpy="0 0 3.1416" /> <parent link="base_link" />
+    <child link="link_rw" />
+    <axis xyz="0 -1 0" />
+  </joint>
+
+  <link name="link_ca">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.1" />
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find description_new)/meshes/link_ca.STL" scale="1 1 1"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.0035"/> 
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_ca" type="continuous">
+    <origin xyz="-0.1 0 -0.0037667" rpy="0 0 3.1416" />
+    <parent link="base_link" />
+    <child link="link_ca" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <link name="link_ca2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.1" />
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find description_new)/meshes/link_ca2.STL" scale="1 1 1"/>
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.0035"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint_ca2" type="continuous">
+    <origin xyz="0.1 0 -0.0037667" rpy="0 0 3.1416" />
+    <parent link="base_link" />
+    <child link="link_ca2" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <gazebo reference="link_ca">
+    <collision>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.0</mu>
+            <mu2>0.0</mu2>
+            <slip1>1.0</slip1>
+            <slip2>1.0</slip2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </gazebo>
+
+  <gazebo reference="link_ca2">
+    <collision>
+      <surface>
+        <friction>
+          <ode>
+            <mu>0.0</mu>
+            <mu2>0.0</mu2>
+            <slip1>1.0</slip1>
+            <slip2>1.0</slip2>
+          </ode>
+        </friction>
+      </surface>
+    </collision>
+  </gazebo>
+
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link"/>
+    <child link="imu_link" />
+  </joint>
+
+  <link name="imu_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+<gazebo reference="link_lw">
+    <collision>
+      <surface>
+        <friction>
+          <ode><mu>1.0</mu><mu2>1.0</mu2></ode>
+        </friction>
+      </surface>
+    </collision>
+  </gazebo>
+
+  <gazebo reference="link_rw">
+    <collision>
+      <surface>
+        <friction>
+          <ode><mu>1.0</mu><mu2>1.0</mu2></ode>
+        </friction>
+      </surface>
+    </collision>
+  </gazebo>
+
+
+</robot>

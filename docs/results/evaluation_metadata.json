@@ -1,0 +1,19 @@
+{
+  "checkpoint": "/home/harivathsha/ai_envs/project/nlp_project/artifacts/semantic_phase2_typing",
+  "workbook": "dataset_phase2_9500.xlsx",
+  "workbook_sha256": "a3922b3131f6e1af80cd62794b55ee528e742c00ba946cd6c75fc70f9d28c77a",
+  "model_files_sha256": {
+    "generation_config.json": "164b5d9fa0c8c94bd4b4281b6a9d7cd759cb938b94ebb8d56aae2adf4dd0d6fd",
+    "model.safetensors": "411e82738efeb31e0c8fcae6a06bb7d08c89401ba9c43ecee2c19b60bd60b263",
+    "command_schema.json": "a617c1a99f22b04c19bdae20c6b6fe83677ae9cd7dcec5a8fe4b7a2519b323eb",
+    "tokenizer_config.json": "3239e1d2715ab96d3eb84aa30a6cfa93e632155a28e4510165828315202e31ed",
+    "tokenizer.json": "bd027acf88b523bb919b91bf1017ff1cd088218bc98f3e8e629103862c09f30b",
+    "config.json": "4e348108f2b1d8bee485ffc152dc66c85d69c20bb2bc50849397ccd75e5faf8f"
+  },
+  "versions": {
+    "torch": "2.12.0",
+    "transformers": "5.11.0",
+    "pandas": "3.0.3"
+  },
+  "note": "The existing checkpoint is loaded locally. No training is performed."
+}

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package format="3">
+  <name>navigation</name>
+  <version>0.0.0</version>
+  <description>Navigation configuration for the language demo</description>
+  <maintainer email="harivathsharamesh@gmail.com">harivathsha</maintainer>
+  <license>TODO: License declaration</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclpy</depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+  <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>slam_toolbox</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+</package>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="hv_bot">
+
+        <link name="two_d_lidar">
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <cylinder length="0.05" radius="0.075"/>
+                </geometry>
+            </collision>
+
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <cylinder length="0.05" radius="0.075"/>
+                </geometry>
+                    <material name="red">
+                                    <color rgba="0.8 0.0 0.0 1.0"/>
+
+                    </material>
+            </visual>
+
+            <inertial>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <mass value="0.1"/>
+                <inertia ixx="0.000170625" ixy="0.0" ixz="0.0" iyy="0.000170625" iyz="0.0" izz="0.00028125" />
+            </inertial>
+        </link>
+
+        <joint name="two_d_lidar_joint" type="fixed">
+            <parent link="base_link"/>
+            <child link="two_d_lidar"/>
+            <origin xyz="0.0 0 0.08" rpy="0 0 0" />
+        </joint>
+
+        <gazebo reference="two_d_lidar">
+            <material name="red">
+                <color rgba="0.8 0.0 0.0 1.0"/>
+            </material>
+        </gazebo>
+
+</robot>
