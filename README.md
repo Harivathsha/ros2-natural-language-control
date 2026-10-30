@@ -204,4 +204,4 @@ This command evaluates validation. The published test report was generated separ
 
 Build products, environments, caches, previous models, and raw recordings are excluded. This is a simulation learning project with a finite command interface. Independent testing of new phrasing, numbers, and identifiers remains future work.
 
-Developed by [Harivathsha Ramesh](https://github.com/Harivathsha).
+Developed by [Harivathsha Ramesh](https://github.com/Harivathsha), [Don Devasiachan](https://github.com/Johnrre), [Siddhanta Nanda](https://github.com/Sid-2775).
